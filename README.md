@@ -10,13 +10,13 @@
 :[预览网站](http://175.24.16.52/)
 
 #### 博客首页
-![](http://175.24.16.52/static/img/github-preview/index1.png)
-![](http://175.24.16.52/static/img/github-preview/index2.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/index1.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/index2.png)
 
 #### 博客编辑页
-![](http://175.24.16.52/static/img/github-preview/blogedit.png)
-![](http://175.24.16.52/static/img/github-preview/blogedit2.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/blogedit.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/blogedit2.png)
 
 #### 博客详情页
-![](http://175.24.16.52/static/img/github-preview/blogdetail1.png)
-![](http://175.24.16.52/static/img/github-preview/blogcomment.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/blogdetail1.png)
+![](https://github.com/ye11d/oblog/raw/master/public/img/github-preview/blogcomment.png)
