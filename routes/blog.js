@@ -60,13 +60,16 @@ router.get('', async function (req, res) {
     let blogs = await getBlogs(page, pageblognumber, boardid)
     let blogboards = []
     let blogusers = []
+    let blogcommentnums = []
     for (let blog of blogs) {
         let board = await blog.findBoard(blog.boardid)
         let user = await blog.findUser(blog.userid)
+        let commentnum = await Comment.find({ "blogid": blog._id }).countDocuments()
         blogboards.push(board)
         blogusers.push(user)
+        blogcommentnums.push(commentnum)
     }
-    res.render('blog/index', { boards, blogs, blogusers, blogboards, pageMax, page })
+    res.render('blog/index', { boards, blogs, blogusers, blogboards, pageMax, page, blogcommentnums })
 })
 
 router.get('/new',async function(req, res) {
