@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: small;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/bac2.jpg);
+	background-repeat: no-repeat;
+	color: #80bd01;
+	background-size: cover;
+	/* min-height: 800px; */
+}
+#main {
+	margin: 50px auto;
+	width: 300px;
+	height: 450px;
+	padding: 0px 30px;
+	border: 1px solid green;
+	background: #f6f6f6;
+}
+.img-title {
+	width: 100%;
+	height: 120px;
+	background-image: url(../img/ologo2.png);
+	background-color: #f6f6f6;
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 100% 120px;
+}
+.login-menu{
+	text-align: left;
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+.login-menu-item{
+	display: inline-block;
+	cursor: pointer;
+	padding: 15px 10px;
+}
+.menu-active {
+	font-weight: bold;
+	background: #80bd01;
+	color:white;
+}
+label .star {
+	color: red;
+}
+input {
+	border: 0px;
+	outline: none;
+	background: #f6f6f6;
+	border-bottom: 1px solid #80bd01;
+	width: 85%;
+	line-height: 30px;
+	font-size: 16px;
+}
+button {
+	width: 100%;
+	line-height: 35px;
+	font-size: 130%;
+	font-weight: bold;
+	color: #80bd01;
+}
+.hide {
+	display: none;
+}
+.findpwd {
+	text-align: right;
+	margin: 10px 0 40px 0;
+}
+a {
+	text-decoration: none;
+	color: gray;
+}

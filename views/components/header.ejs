@@ -1,0 +1,43 @@
+<div class="header">
+	<div class="nav">
+		<div class="left">
+			<div class="logo"></div>
+			<div class="navitem">
+				<a href="/">首页</a>
+			</div>
+			<div class="navitem">
+				<a href="">博客</a>
+			</div>
+			<div class="navitem">
+				<a href="">问答</a>
+			</div>
+			<div class="navitem">
+				<a href="">讨论</a>
+			</div>
+		</div>
+		<div class="right">
+			<div class="search">
+				<input type="text">
+			</div>
+			<% if (user) { %>
+			<div class="user">
+				<a href="/user/edit">
+					<img class="headimg" src="/static/img/headimg/<%=user.headimg%>" alt="">
+				</a>
+				<div class="userlist hide">
+					<a href="/user/edit">
+						编辑信息
+					</a>
+					<a href="/user/loginout">
+						登出
+					</a>
+				</div>
+			</div>
+			<% } else { %>
+			<div class="navitem">
+				<a href="/user/login">注册/登录</a>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</div>

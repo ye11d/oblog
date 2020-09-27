@@ -1,0 +1,36 @@
+<div class="sidebar">
+    <% if (user) { %>
+    <div class="user">
+        <div class="titie">
+            <span>个人信息</span>
+            <a class="newblog" href="/blog/new">发布话题</a>
+        </div>
+        <div class="detail">
+            <a href="/user/edit">
+                <img src="/static/img/headimg/<%=user.headimg%>" alt="">
+            </a>
+            <div class="useritem">
+                <a class="username" href="/user/edit"><%=user.username%></a>
+                <div class="saying"><%=user.saying%></div>
+            </div>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="sidebar-column">
+        <div class="sidebar-column-container">
+            <div class="login">
+                welcome！您当前未<a href="/user/login">注册/登录</a><br>
+                <a href="/user/login">注册/登录</a>后你能
+            </div>
+            <ul>
+                <li>整理知识，学习笔记</li>
+                <li>发布博客，分享经验</li>
+                <li>记录日记，杂文，所见所想</li>
+            </ul>
+            <div class="share">
+                by<br><a class="newblog" href="/blog/new">发布话题</a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>

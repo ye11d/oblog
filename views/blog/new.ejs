@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/github-markdown.css">
+		<link rel="stylesheet" href="/static/css/blognew.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+		<script src="/static/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="edit-section">
+				<form class="edit-form" method="post">
+					<textarea name="content" placeholder="正文" style="overflow-y:scroll">
+					</textarea>
+					<button type="button" class="button-ensure">发布</button>
+					<div class='modal-container hide'>
+						<div class='modal-mask'></div>
+						<div class="modal-column vertical-center">
+							<div class="formtitle">
+								<label for="title">标题:</label>
+								<input type="text" name="title" required>
+							</div>
+							<span>选择版块：</span>
+							<select name="boardid" required>
+								<option value="">请选择</option>
+								<% boards.forEach(function(board){ %>
+								<option value="<%-board._id-%>"><%-board.name-%></option>
+								<% }) %>
+							</select>
+							<button class="button-submit" type="submit">提交</button>
+							<img class="button-cancel" src="/static/img/delete.png" alt="">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="preview-section markdown-body">
+			</div>
+		</div>
+	</body>
+	<script>
+		$("textarea").keyup(function() {
+			let converter = new showdown.Converter()
+			let text = $("textarea").val();
+			let html = converter.makeHtml(text);
+			$('.preview-section').html(html)
+		})
+		$("textarea").keypress(function () {
+			let converter = new showdown.Converter()
+			let text = $("textarea").val();
+			let html = converter.makeHtml(text);
+			$('.preview-section').html(html)
+		})
+	</script>
+	<script>
+		$('.button-ensure').click(function(){
+			$('.modal-container').removeClass('hide')
+		})
+		$('.button-cancel').click(function(){
+			$('.modal-container').addClass('hide')
+		})
+	</script>
+</html>

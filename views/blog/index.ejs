@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>博客主页</title>
+		<link rel="stylesheet" href="/static/css/nav.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+		<link rel="stylesheet" href="/static/css/sidebar.css">
+		<script src="/static/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<%- include('../components/header'); -%>
+		<div class="container">
+			<div class="main">
+				<div class="boardlist">
+					<div class="boarditem">
+						<a href="/blog">全部</a>
+					</div>
+					<% boards.forEach(function(board) { %>
+					<div class="boarditem">
+						<a href="?board=<%=board._id%>"><%-board.name-%></a>
+					</div>
+					<% }) %>
+				</div>
+				<div class="bloglist">
+					<% blogs.forEach(function(blog, index) { %>
+					<div class="blogitem">
+						<div class="left">
+							<div class="headimg">
+								<img src="/static/img/headimg/<%-blogusers[index].headimg%>" alt="">
+							</div>
+							<div class="numbers">
+								<span class="replynum">0</span>
+								<span>/</span>
+								<span class="clicknum"><%=blog.clicknum%></span>
+							</div>
+							<div class="blogboard">
+								<!-- <%- blog.findBoard(blog.boardid) %> -->
+								<%-blogboards[index].name%>
+							</div>
+							<div class="blogtitle">
+								<a href="/blog/<%-blog.id%>">
+								<%-blog.title%>
+								</a>
+							</div>
+						</div>
+						<div class="right">
+							<div class="blogtime"><%-blog.ct%></div>
+						</div>
+					</div>
+					<% }) %>
+					<div class="pagelist">
+						<a class="pageitem select"><%=page%></a>
+						<a class="pageitem pageMax" href=""><%=pageMax%></a>
+					</div>
+				</div>
+			</div>
+			<%- include('../components/sidebar'); -%>
+		</div>
+		<div class="footer">
+		</div>
+		<script src="/static/js/blogindex.js"></script>
+		<script src="/static/js/nav.js"></script>
+	</body>
+</html>
+
